@@ -23,16 +23,16 @@ namespace sistemadedesconto
 
         private void CalcularDesconto(object sender, EventArgs e)
         {
-            int valorCompra;
-            int desconto;
+            double valorCompra;
+            double desconto;
 
-            if (!int.TryParse(txtValorCompra.Text, out valorCompra) || !int.TryParse(txtValorDesconto.Text, out desconto))
+            if (!double.TryParse(txtValorCompra.Text, out valorCompra) || !double.TryParse(txtValorDesconto.Text, out desconto))
             {
                 lblResultado.Text = "Valores inválidos!";
                 return;
             }
 
-            int resultado = valorCompra - (valorCompra * desconto / 100);
+            double resultado = valorCompra - (valorCompra * desconto / 100);
 
             lblResultado.Text = $"R$ {resultado}";
         }
